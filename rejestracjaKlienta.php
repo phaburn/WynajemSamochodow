@@ -74,5 +74,6 @@
 			} else { echo "Podane hasła się różnią."; }
 		} else { echo "Podany login jest juz zajety."; }
 	}
+	$_POST = array();
 	mysqli_close($conn);
 ?>
