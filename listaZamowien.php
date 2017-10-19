@@ -1,3 +1,4 @@
+<title>Lista zamówień</title>
 <?php
 	include "menu.html";
 	include "global.php";
