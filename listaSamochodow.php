@@ -1,3 +1,4 @@
+<title>Lista samochodów</title>
 <?php
 	include 'global.php';
 	include 'menu.html';
@@ -29,22 +30,19 @@
 				<td>".$row["Kolor"]."</td>
 				<td>".$row["Stan"]."</td>
 				<td>
-					<form action='' method=\"POST\">
+					<form action='zmianaStatusuSamochodu.php' method=\"POST\">
 						<select name='zmianaStatusuSamochodu'>
 							<option value='Wolny'>Wolny</option>
 							<option value='Zarezerwowany'>Zarezerwowany</option>
 							<option value='Wynajety'>Wynajęty</option>
 							<option value='Serwis'>Serwis</option>
 						</select>
+						<input type='hidden' name='idSamochodu' value='".$row["idSamochodu"]."'>
+						<button type='Submit' name='zmien' value='".$row["idSamochodu"]."'>Zmień</button>
 					</form>
-					<button type='Submit' name='zmien' value='".$row["idSamochodu"]."'>Zmień</button>
 				</td>
 			</tr>";
 	}
 	echo "</table>";
 	
-	if($_POST['zmien']==1 ) {
-		alert("Udalo sie!1");
-	}
-
 ?>

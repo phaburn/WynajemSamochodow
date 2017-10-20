@@ -46,14 +46,7 @@
 	/*REJESTRACJA KLIENTA W BAZIE KLIENTÓW*/
 	include 'global.php';
 	$conn = mysqli_connect($host,$user,$pass,$db);
-	
-	
-	function filtruj($zmienna){
-		global $conn;	
-		if(get_magic_quotes_gpc()) { $zmienna = stripslashes($zmienna); /*usuwamy slashe*/ }
-		return mysqli_real_escape_string($conn, htmlspecialchars(trim($zmienna))); /*usuwamy spacje, tagi html oraz niebezpieczne znaki*/
-	}
-	
+		
 	if (isset($_POST['zarejestruj'])) {
 		$login = filtruj($_POST['login']);
 		$haslo1 = filtruj($_POST['haslo1']);
